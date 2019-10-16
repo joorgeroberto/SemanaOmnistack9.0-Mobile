@@ -37,7 +37,10 @@ function SpotList({ tech, navigation }) {
           <View style={[styles.listItem]}>
             <Image
               style={styles.thumbnail}
-              source={{ uri: `http://192.168.0.65${item.thumbnail_url.substr(16,)}`}}
+              // Waterpark: 192.168.0.65
+              // source={{ uri: `http://192.168.0.65${item.thumbnail_url.substr(16,)}`}}
+              // Casa: 192.168.1.4
+              source={{ uri: `http://192.168.1.4${item.thumbnail_url.substr(16,)}`}}
             />
             <Text style={styles.company}>{item.company}</Text>
             <Text style={styles.price}>{item.price ? `R$ ${item.price}/dia` : 'GRATUITO'}</Text>
@@ -68,7 +71,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
   listItem: {
-    marginRight: 15
+    marginRight: 30,
+    //paddingRight: 15
   },
   thumbnail: {
     width: 200,
